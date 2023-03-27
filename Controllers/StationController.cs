@@ -24,7 +24,7 @@ namespace EFTemplate.Controllers
         }
 
         [HttpGet("ListStations")]
-        public async Task<ActionResult<List<Station>>> ListStations(int limit, int offset)
+        public async Task<ActionResult<List<Station>>> ListStations(int limit = 10, int offset = 0)
         {
             List<Station> stations = await stationService.ListStations(limit, offset);
             return stations;
